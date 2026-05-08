@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us</title>
+
+  <!-- ROBOTO FONT -->
+
+  <link rel="preconnect"
+  href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+  rel="stylesheet">
+
+  <!-- TAILWIND -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <script>
+
+    tailwind.config = {
+
+      theme: {
+
+        extend: {
+
+          fontFamily: {
+
+            roboto:['Roboto','sans-serif']
+
+          },
+
+          colors: {
+
+            primary:'#FF6F61'
+
+          }
+
+        }
+
+      }
+
+    }
+
+  </script>
+
+</head>
+
+<body class="font-roboto bg-[#f5f5f5] text-[#111827] overflow-x-hidden">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="bg-white">
+
+  <nav class="flex
+  justify-between
+  items-center
+  px-[7%]
+  py-5
+  relative">
+
+      <!-- LOGO IMAGE -->
+
+ <img src="images/Screenshot (938).png"
+alt="Fashion World Logo"
+class="w-34 h-34 object-contain">
+
+    <!-- NAV LINKS -->
+
+    <ul id="navLinks"
+    class="absolute md:static
+    top-[90px]
+    left-[-100%]
+    md:left-0
+    bg-white
+    w-full md:w-auto
+    flex flex-col md:flex-row
+    items-center
+    gap-8 md:gap-10
+    py-8 md:py-0
+    transition-all duration-300">
+
+      <li>
+        <a href="index.html"
+        class="text-lg hover:text-primary">
+
+          Home
+
+        </a>
+      </li>
+
+      <li>
+        <a href="catagories.html"
+        class="text-lg hover:text-primary">
+
+          Categories
+
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html"
+        class="text-lg hover:text-primary">
+
+          About Us
+
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html"
+        class="text-lg hover:text-primary">
+
+          Contact
+
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT -->
+
+<div class="hidden md:flex items-center gap-6">
+
+  <!-- CART -->
+
+  <a href="cart.html">
+
+    <i class="fa-solid fa-cart-shopping
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- OTP LOGIN -->
+
+  <a href="user.html">
+
+    <i class="fa-regular fa-user
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- LOGIN BUTTON -->
+
+  <a href="login.html">
+
+    <button class="bg-[#222]
+    text-white
+    px-8 py-3
+    rounded-xl
+    text-lg
+    hover:bg-primary
+    transition">
+
+      Login
+
+    </button>
+
+  </a>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<div id="menuBtn"
+class="md:hidden text-3xl cursor-pointer">
+
+  <i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+</header>
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="px-[7%]
+py-16 md:py-20">
+
+  <!-- TITLE -->
+
+  <h1 class="text-center
+  text-4xl md:text-6xl
+  font-bold
+  mb-16">
+
+    Contact Us
+
+  </h1>
+
+  <!-- CONTAINER -->
+
+  <div class="max-w-[1100px]
+  mx-auto
+  border-2 border-gray-300
+  rounded-[25px] md:rounded-[50px]
+  p-8 md:p-16">
+
+    <!-- HEADING -->
+
+    <div class="mb-14">
+
+      <h2 class="text-4xl md:text-6xl font-medium">
+
+        Contact
+
+        <span class="text-blue-500">
+
+          Us
+
+        </span>
+
+      </h2>
+
+      <p class="text-2xl md:text-4xl mt-4">
+
+        Let’s get in touch!
+
+      </p>
+
+    </div>
+
+    <!-- FORM -->
+
+    <form id="contactForm">
+
+      <!-- NAME -->
+
+      <div class="relative mb-14">
+
+        <input
+        type="text"
+        id="name"
+        placeholder=" "
+        required
+
+        class="peer
+        w-full
+        border-b-2 border-gray-600
+        bg-transparent
+        outline-none
+        py-4
+        text-xl md:text-4xl">
+
+        <label
+        for="name"
+
+        class="absolute
+        left-0
+        top-4
+        text-xl md:text-4xl
+        transition-all
+        peer-focus:-top-5
+        peer-focus:text-primary
+        peer-focus:text-lg
+        peer-valid:-top-5
+        peer-valid:text-lg">
+
+          Name
+
+        </label>
+
+      </div>
+
+      <!-- EMAIL -->
+
+      <div class="relative mb-14">
+
+        <input
+        type="email"
+        id="email"
+        placeholder=" "
+        required
+
+        class="peer
+        w-full
+        border-b-2 border-gray-600
+        bg-transparent
+        outline-none
+        py-4
+        text-xl md:text-4xl">
+
+        <label
+        for="email"
+
+        class="absolute
+        left-0
+        top-4
+        text-xl md:text-4xl
+        transition-all
+        peer-focus:-top-5
+        peer-focus:text-primary
+        peer-focus:text-lg
+        peer-valid:-top-5
+        peer-valid:text-lg">
+
+          Email
+
+        </label>
+
+      </div>
+
+      <!-- MESSAGE -->
+
+      <div class="relative mb-14">
+
+        <textarea
+        id="message"
+        placeholder=" "
+        required
+
+        class="peer
+        w-full
+        h-[180px]
+        resize-none
+        border-b-2 border-gray-600
+        bg-transparent
+        outline-none
+        py-4
+        text-xl md:text-4xl"></textarea>
+
+        <label
+        for="message"
+
+        class="absolute
+        left-0
+        top-4
+        text-xl md:text-4xl
+        transition-all
+        peer-focus:-top-5
+        peer-focus:text-primary
+        peer-focus:text-lg
+        peer-valid:-top-5
+        peer-valid:text-lg">
+
+          Contact
+
+        </label>
+
+      </div>
+
+      <!-- CHECKBOX -->
+
+      <div class="flex
+      flex-col md:flex-row
+      justify-center
+      items-center
+      gap-4
+      mb-12">
+
+        <input
+        type="checkbox"
+        id="check"
+
+        class="w-6 h-6">
+
+        <label
+        for="check"
+
+        class="text-lg md:text-3xl">
+
+          I would like to receive newsletter
+
+        </label>
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <button
+      type="submit"
+
+      class="w-full
+      bg-blue-500
+      hover:scale-[1.02]
+      transition
+      py-5
+      rounded-3xl
+      text-2xl md:text-5xl
+      font-medium">
+
+        Submit
+
+      </button>
+
+      <!-- SUCCESS -->
+
+      <p id="successMsg"
+      class="hidden
+      text-center
+      text-green-600
+      text-xl
+      mt-6">
+
+        Form submitted successfully ✓
+
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#222]
+text-white
+px-[7%]
+py-16">
+
+  <div class="grid
+  grid-cols-1
+  md:grid-cols-2
+  xl:grid-cols-4
+  gap-14">
+
+    <!-- BOX -->
+
+    <div>
+
+      <h2 class="text-4xl font-bold">
+
+        LUXE.
+
+      </h2>
+
+      <p class="text-gray-300
+      text-lg
+      leading-relaxed
+      my-6">
+
+        Premium fashion for the modern connoisseur.
+        Elevate your style with our curated collections.
+
+      </p>
+
+      <!-- SOCIAL -->
+
+      <div class="flex gap-4">
+
+        <div class="w-12 h-12
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center
+        cursor-pointer
+        hover:bg-primary
+        transition">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </div>
+
+        <div class="w-12 h-12
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center
+        cursor-pointer
+        hover:bg-primary
+        transition">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </div>
+
+        <div class="w-12 h-12
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center
+        cursor-pointer
+        hover:bg-primary
+        transition">
+
+          <i class="fa-brands fa-twitter"></i>
+
+        </div>
+
+        <div class="w-12 h-12
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center
+        cursor-pointer
+        hover:bg-primary
+        transition">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SHOP -->
+
+    <div>
+
+      <h3 class="text-3xl font-bold mb-6">
+
+        Shop
+
+      </h3>
+
+      <div class="flex flex-col gap-4">
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Women
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Men
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Accessories
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          New Arrivals
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Sale
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- HELP -->
+
+    <div>
+
+      <h3 class="text-3xl font-bold mb-6">
+
+        Help
+
+      </h3>
+
+      <div class="flex flex-col gap-4">
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Customer Service
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          My Account
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Find a Store
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Shipping & Returns
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          FAQ
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div>
+
+      <h3 class="text-3xl font-bold mb-6">
+
+        About
+
+      </h3>
+
+      <div class="flex flex-col gap-4">
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Our Story
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Careers
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Corporate Responsibility
+
+        </a>
+
+        <a href="#"
+        class="text-gray-300 text-xl hover:text-primary">
+
+          Press
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+
+  if(navLinks.classList.contains("left-[-100%]")){
+
+    navLinks.classList.remove("left-[-100%]");
+    navLinks.classList.add("left-0");
+
+  }
+
+  else{
+
+    navLinks.classList.remove("left-0");
+    navLinks.classList.add("left-[-100%]");
+
+  }
+
+});
+
+/* ================= FORM ================= */
+
+const contactForm =
+document.getElementById("contactForm");
+
+const successMsg =
+document.getElementById("successMsg");
+
+contactForm.addEventListener("submit",
+
+(e)=>{
+
+  e.preventDefault();
+
+  successMsg.classList.remove("hidden");
+
+  contactForm.reset();
+
+  setTimeout(()=>{
+
+    successMsg.classList.add("hidden");
+
+  },3000);
+
+});
+
+</script>
+
+</body>
+</html>

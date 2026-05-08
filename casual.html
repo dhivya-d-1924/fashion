@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fashion Categories</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FF6F61",
+          },
+          fontFamily: {
+            roboto: ["Roboto", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body{
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f5f5f5]">
+
+<!-- ================= NAVBAR ================= -->
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="bg-white">
+
+  <nav class="flex
+  justify-between
+  items-center
+  px-[7%]
+  py-5
+  relative">
+
+      <!-- LOGO IMAGE -->
+
+ <img src="images/Screenshot (938).png"
+alt="Fashion World Logo"
+class="w-34 h-34 object-contain">
+
+    <!-- NAV LINKS -->
+
+    <ul id="navLinks"
+    class="absolute md:static
+    top-[90px]
+    left-[-100%]
+    md:left-0
+    bg-white
+    w-full md:w-auto
+    flex flex-col md:flex-row
+    items-center
+    gap-8 md:gap-10
+    py-8 md:py-0
+    transition-all duration-300">
+
+      <li>
+        <a href="index.html"
+        class="text-lg hover:text-primary">
+
+          Home
+
+        </a>
+      </li>
+
+      <li>
+        <a href="catagories.html"
+        class="text-lg hover:text-primary">
+
+          Categories
+
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html"
+        class="text-lg hover:text-primary">
+
+          About Us
+
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html"
+        class="text-lg hover:text-primary">
+
+          Contact
+
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT -->
+
+<div class="hidden md:flex items-center gap-6">
+
+  <!-- CART -->
+
+  <a href="cart.html">
+
+    <i class="fa-solid fa-cart-shopping
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- OTP LOGIN -->
+
+  <a href="user.html">
+
+    <i class="fa-regular fa-user
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- LOGIN BUTTON -->
+
+  <a href="login.html">
+
+    <button class="bg-[#222]
+    text-white
+    px-8 py-3
+    rounded-xl
+    text-lg
+    hover:bg-primary
+    transition">
+
+      Login
+
+    </button>
+
+  </a>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<div id="menuBtn"
+class="md:hidden text-3xl cursor-pointer">
+
+  <i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+</header>
+
+<!-- ================= CATEGORY MENU ================= -->
+
+<section class="px-[7%] py-10">
+
+  <div class="flex flex-wrap gap-6 text-2xl mb-10">
+
+    <button class="category-btn text-primary"
+    data-category="all">
+      All
+    </button>
+
+    <button class="category-btn"
+    data-category="modern">
+      Modern
+    </button>
+
+    <button class="category-btn"
+    data-category="traditional">
+      Traditional
+    </button>
+
+    <button class="category-btn"
+    data-category="casual">
+      Casual
+    </button>
+
+    <button class="category-btn"
+    data-category="formal">
+      Formals
+    </button>
+
+  </div>
+
+  <!-- MAIN GRID -->
+
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <div class="bg-white border rounded-xl p-8 h-fit">
+
+      <h2 class="text-4xl font-bold mb-8 text-center">
+        categories
+      </h2>
+
+      <div class="space-y-5 text-center text-3xl">
+
+        <button class="sidebar-btn block w-full bg-gray-200 py-2 rounded"
+        data-category="all">
+          All
+        </button>
+
+        <button class="sidebar-btn block w-full"
+        data-category="men">
+          Men
+        </button>
+
+        <button class="sidebar-btn block w-full"
+        data-category="women">
+          Women
+        </button>
+
+        <button class="sidebar-btn block w-full"
+        data-category="kids">
+          Kids
+        </button>
+
+      </div>
+
+      <!-- SIZE -->
+
+      <h2 class="text-4xl font-bold text-center mt-16 mb-8">
+        Size
+      </h2>
+
+      <div class="grid grid-cols-2 gap-5">
+
+        <button class="size-btn border py-4 rounded-xl text-2xl"
+        data-size="S">
+          S
+        </button>
+
+        <button class="size-btn border py-4 rounded-xl text-2xl"
+        data-size="M">
+          M
+        </button>
+
+        <button class="size-btn border py-4 rounded-xl text-2xl"
+        data-size="L">
+          L
+        </button>
+
+        <button class="size-btn border py-4 rounded-xl text-2xl"
+        data-size="XL">
+          XL
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <div class="lg:col-span-3">
+
+      <div id="productGrid"
+      class="grid sm:grid-cols-2 xl:grid-cols-3 gap-10">
+
+        <!-- PRODUCT -->
+
+        <div class="product"
+        data-category="kids casual"
+        data-gender="kids"
+        data-size="S M">
+
+          <div class="relative group overflow-hidden rounded-lg">
+
+            <img src="images/Frame 2657.jpg"
+            class="w-full h-[430px] object-cover">
+
+            <div class="absolute inset-0
+            bg-black/40
+            opacity-0
+            group-hover:opacity-100
+            transition
+            flex items-center justify-center">
+
+              <button class="bg-primary
+              text-white
+              px-8 py-3
+              rounded-xl
+              text-xl">
+
+                Buy Now
+
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                T-Shirt & Jean
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+
+        <!-- PRODUCT -->
+
+        <div class="product"
+        data-category="traditional women"
+        data-gender="women"
+        data-size="L XL">
+
+          <img src="images/Frame 2657.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Saree
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Traditional Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $2000
+            </h3>
+
+          </div>
+
+        </div>
+
+        <!-- PRODUCT -->
+
+        <div class="product"
+        data-category="modern women"
+        data-gender="women"
+        data-size="M XL">
+
+          <img src="images/Frame 2658.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Modern Dress
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Modern Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $500
+            </h3>
+
+          </div>
+
+        </div>
+
+        <!-- PRODUCT -->
+
+        <div class="product"
+        data-category="formal women"
+        data-gender="women"
+        data-size="L XL">
+
+          <img src="images/Frame 2659.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Formal Suit
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Formal Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $1000
+            </h3>
+
+          </div>
+
+        </div>
+
+        
+        <!-- PRODUCT -->
+
+        <div class="product"
+        data-category="casual men"
+        data-gender="men"
+        data-size="M L">
+
+          <img src="images/Frame 2664.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Jacket
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+<!-- PRODUCT -->
+
+        <div class="product"
+        data-category="casual men"
+        data-gender="men"
+        data-size="M L">
+
+          <img src="images/Frame 2668.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Jacket
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+<!-- PRODUCT -->
+
+        <div class="product"
+        data-category="casual men"
+        data-gender="men"
+        data-size="M L">
+
+          <img src="images/Frame 2697.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Jacket
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+<!-- PRODUCT -->
+
+        <div class="product"
+        data-category="casual men"
+        data-gender="men"
+        data-size="M L">
+
+          <img src="images/Frame 2696.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Jacket
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+<!-- PRODUCT -->
+
+        <div class="product"
+        data-category="casual men"
+        data-gender="men"
+        data-size="M L">
+
+          <img src="images/Frame 2698.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Jacket
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+<!-- PRODUCT -->
+
+        <div class="product"
+        data-category="casual men"
+        data-gender="men"
+        data-size="M L">
+
+          <img src="images/Frame 2699.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Jacket
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+<!-- PRODUCT -->
+
+        <div class="product"
+        data-category="casual men"
+        data-gender="men"
+        data-size="M L">
+
+          <img src="images/Frame 2698.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Jacket
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+<!-- PRODUCT -->
+
+        <div class="product"
+        data-category="casual men"
+        data-gender="men"
+        data-size="M L">
+
+          <img src="images/Frame 2696.jpg"
+          class="w-full h-[430px] object-cover rounded-lg">
+
+          <div class="flex justify-between mt-4">
+
+            <div>
+              <h3 class="text-2xl font-bold">
+                Jacket
+              </h3>
+
+              <p class="text-gray-500 text-xl">
+                Casual Wear
+              </p>
+            </div>
+
+            <h3 class="text-2xl font-bold">
+              $800
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#222]
+text-white
+px-[7%]
+py-20">
+
+  <div class="grid
+  grid-cols-1
+  md:grid-cols-2
+  xl:grid-cols-4
+  gap-12">
+
+    <!-- BOX -->
+
+    <div>
+
+      <h2 class="text-3xl font-bold">
+
+        LUXE.
+
+      </h2>
+
+      <p class="text-gray-300
+      leading-relaxed
+      mt-5">
+
+        Premium fashion for the
+        modern connoisseur.
+        Elevate your style
+        with our curated collections.
+
+      </p>
+
+      <div class="flex gap-4 mt-6">
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-twitter"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- LINKS -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Shop
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Accessories</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Sale</a>
+
+      </div>
+
+    </div>
+
+    <!-- HELP -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Help
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Customer Service</a>
+        <a href="#">My Account</a>
+        <a href="#">Find a Store</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">FAQ</a>
+
+      </div>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        About
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Our Story</a>
+        <a href="#">Careers</a>
+        <a href="#">Corporate Responsibility</a>
+        <a href="#">Press</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const products = document.querySelectorAll(".product");
+
+const categoryBtns = document.querySelectorAll(".category-btn");
+const sidebarBtns = document.querySelectorAll(".sidebar-btn");
+const sizeBtns = document.querySelectorAll(".size-btn");
+
+let selectedCategory = "all";
+let selectedSize = "all";
+
+function filterProducts(){
+
+  products.forEach(product => {
+
+    const category = product.dataset.category;
+    const size = product.dataset.size;
+
+    const matchCategory =
+    selectedCategory === "all" ||
+    category.includes(selectedCategory);
+
+    const matchSize =
+    selectedSize === "all" ||
+    size.includes(selectedSize);
+
+    if(matchCategory && matchSize){
+
+      product.style.display = "block";
+
+    } else {
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+}
+
+/* CATEGORY FILTER */
+
+categoryBtns.forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    selectedCategory = btn.dataset.category;
+
+    filterProducts();
+
+  });
+
+});
+
+sidebarBtns.forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    selectedCategory = btn.dataset.category;
+
+    filterProducts();
+
+  });
+
+});
+
+/* SIZE FILTER */
+
+sizeBtns.forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    selectedSize = btn.dataset.size;
+
+    filterProducts();
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>

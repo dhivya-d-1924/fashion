@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>OTP Login</title>
+
+  <!-- ROBOTO -->
+
+  <link rel="preconnect"
+  href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+  rel="stylesheet">
+
+  <!-- TAILWIND -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <script>
+
+    tailwind.config = {
+
+      theme: {
+
+        extend: {
+
+          fontFamily: {
+
+            roboto:['Roboto','sans-serif']
+
+          },
+
+          colors: {
+
+            primary:'#FF6F61'
+
+          }
+
+        }
+
+      }
+
+    }
+
+  </script>
+
+</head>
+
+<body class="font-roboto bg-[#f4f4f4] overflow-x-hidden">
+
+    <!-- ================= NAVBAR ================= -->
+
+<header class="bg-white">
+
+  <nav class="flex
+  justify-between
+  items-center
+  px-[7%]
+  py-5
+  relative">
+
+      <!-- LOGO IMAGE -->
+
+ <img src="images/Screenshot (938).png"
+alt="Fashion World Logo"
+class="w-34 h-34 object-contain">
+
+    <!-- NAV LINKS -->
+
+    <ul id="navLinks"
+    class="absolute md:static
+    top-[90px]
+    left-[-100%]
+    md:left-0
+    bg-white
+    w-full md:w-auto
+    flex flex-col md:flex-row
+    items-center
+    gap-8 md:gap-10
+    py-8 md:py-0
+    transition-all duration-300">
+
+      <li>
+        <a href="index.html"
+        class="text-lg hover:text-primary">
+
+          Home
+
+        </a>
+      </li>
+
+      <li>
+        <a href="catagories.html"
+        class="text-lg hover:text-primary">
+
+          Categories
+
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html"
+        class="text-lg hover:text-primary">
+
+          About Us
+
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html"
+        class="text-lg hover:text-primary">
+
+          Contact
+
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT -->
+
+<div class="hidden md:flex items-center gap-6">
+
+  <!-- CART -->
+
+  <a href="cart.html">
+
+    <i class="fa-solid fa-cart-shopping
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- OTP LOGIN -->
+
+  <a href="user.html">
+
+    <i class="fa-regular fa-user
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- LOGIN BUTTON -->
+
+  <a href="login.html">
+
+    <button class="bg-[#222]
+    text-white
+    px-8 py-3
+    rounded-xl
+    text-lg
+    hover:bg-primary
+    transition">
+
+      Login
+
+    </button>
+
+  </a>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<div id="menuBtn"
+class="md:hidden text-3xl cursor-pointer">
+
+  <i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+</header>
+
+<!-- ================= MAIN WRAPPER ================= -->
+
+<section class="min-h-screen
+grid grid-cols-1
+xl:grid-cols-[1fr_2fr_1fr]
+gap-10
+px-[5%]
+py-10
+items-center">
+
+  <!-- ================= LEFT SIDE ================= -->
+
+  <div class="hidden xl:block
+  relative
+  min-h-[850px]
+  rounded-xl
+  overflow-hidden
+  bg-[url('images/fashion-left.jpg')]
+  bg-cover
+  bg-center">
+
+    <!-- CONTENT -->
+
+    <div class="absolute
+    bottom-16
+    left-10
+    text-white">
+
+      <h2 class="text-6xl
+      font-bold
+      leading-tight
+      mb-5">
+
+        Elegant <br>
+        Seasonal Styles
+
+      </h2>
+
+      <p class="text-2xl
+      leading-relaxed
+      max-w-[300px]
+      mb-8">
+
+        Discover modern fashion
+        designed for every moment.
+
+      </p>
+
+      <button class="bg-primary
+      hover:-translate-y-1
+      transition
+      px-8 py-4
+      rounded-xl
+      text-2xl">
+
+        Go To Shop
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ================= CENTER ================= -->
+
+  <div class="relative
+  px-2 md:px-5">
+
+    <!-- CLOSE -->
+
+    <div id="closeBtn"
+    class="absolute
+    top-0
+    right-0
+    text-3xl md:text-4xl
+    cursor-pointer">
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </div>
+
+    <!-- TITLE -->
+
+    <h1 class="text-center
+    text-5xl md:text-7xl xl:text-8xl
+    font-light">
+
+      Welcome to
+
+    </h1>
+
+    <h3 class="text-center
+    text-2xl md:text-4xl
+    font-bold
+    mt-4">
+
+      Luxury Fashion World
+
+    </h3>
+
+    <!-- FORM -->
+
+    <form id="otpForm"
+    class="mt-16">
+
+      <!-- LABEL -->
+
+      <label class="block
+      text-center
+      text-gray-500
+      text-xl md:text-4xl
+      mb-8">
+
+        Please Enter Your Mobile Number
+
+      </label>
+
+      <!-- PHONE BOX -->
+
+      <div class="bg-[#ececec]
+      rounded-2xl
+      px-5 md:px-8
+      py-5 md:py-6
+      flex items-center
+      gap-5">
+
+        <i class="fa-solid fa-phone
+        text-xl md:text-3xl"></i>
+
+        <span class="text-xl md:text-3xl">
+
+          +91
+
+        </span>
+
+        <!-- DIVIDER -->
+
+        <div class="w-[2px]
+        h-10
+        bg-gray-400"></div>
+
+        <!-- INPUT -->
+
+        <input
+        type="tel"
+        id="mobile"
+        maxlength="10"
+        placeholder="Mobile number"
+        required
+
+        class="w-full
+        bg-transparent
+        outline-none
+        text-xl md:text-3xl">
+
+      </div>
+
+      <!-- EMAIL -->
+
+      <div class="text-right
+      text-lg md:text-2xl
+      font-bold
+      mt-6
+      cursor-pointer">
+
+        Use E-Mail
+
+      </div>
+
+      <!-- TERMS -->
+
+      <p class="mt-10
+      text-base md:text-2xl
+      leading-relaxed
+      text-[#222]">
+
+        This site is protected by
+        reCAPTCHA and the Google
+
+        <a href="#"
+        class="font-medium underline">
+
+          Privacy Policy
+
+        </a>
+
+        and
+
+        <a href="#"
+        class="font-medium underline">
+
+          Terms of Service
+
+        </a>
+
+        apply.
+
+        <br><br>
+
+        On Clicking Continue,
+        I agree to
+
+        <a href="#"
+        class="font-medium underline">
+
+          Terms of Service
+
+        </a>
+
+        &
+
+        <a href="#"
+        class="font-medium underline">
+
+          Privacy Policy
+
+        </a>
+
+      </p>
+
+      <!-- BUTTON -->
+
+      <button
+      type="submit"
+
+      class="w-full
+      mt-12
+      bg-primary
+      hover:-translate-y-1
+      transition
+      text-white
+      py-5
+      rounded-2xl
+      text-2xl md:text-4xl">
+
+        Continue
+
+      </button>
+
+      <!-- SUCCESS -->
+
+      <p id="success"
+      class="hidden
+      text-center
+      text-green-600
+      text-xl
+      mt-6">
+
+        OTP Sent Successfully ✓
+
+      </p>
+
+    </form>
+
+  </div>
+
+  <!-- ================= RIGHT SIDE ================= -->
+
+  <div class="hidden xl:flex gap-5">
+
+    <img
+    src="images/Frame 2656.jpg"
+
+    class="w-1/2
+    h-[700px]
+    object-cover
+    rounded-lg">
+
+    <img
+    src="images/Frame 2657.jpg"
+
+    class="w-1/2
+    h-[700px]
+    object-cover
+    rounded-lg">
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#222]
+text-white
+px-[7%]
+py-20">
+
+  <div class="grid
+  grid-cols-1
+  md:grid-cols-2
+  xl:grid-cols-4
+  gap-12">
+
+    <!-- BOX -->
+
+    <div>
+
+      <h2 class="text-3xl font-bold">
+
+        LUXE.
+
+      </h2>
+
+      <p class="text-gray-300
+      leading-relaxed
+      mt-5">
+
+        Premium fashion for the
+        modern connoisseur.
+        Elevate your style
+        with our curated collections.
+
+      </p>
+
+      <div class="flex gap-4 mt-6">
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-twitter"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- LINKS -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Shop
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Accessories</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Sale</a>
+
+      </div>
+
+    </div>
+
+    <!-- HELP -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Help
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Customer Service</a>
+        <a href="#">My Account</a>
+        <a href="#">Find a Store</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">FAQ</a>
+
+      </div>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        About
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Our Story</a>
+        <a href="#">Careers</a>
+        <a href="#">Corporate Responsibility</a>
+        <a href="#">Press</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* ================= OTP FORM ================= */
+
+const otpForm =
+document.getElementById("otpForm");
+
+const success =
+document.getElementById("success");
+
+otpForm.addEventListener("submit",
+
+function(e){
+
+  e.preventDefault();
+
+  const mobile =
+  document.getElementById("mobile").value;
+
+  // VALIDATION
+
+  if(mobile.length !== 10){
+
+    alert("Enter valid mobile number");
+
+    return;
+
+  }
+
+  success.classList.remove("hidden");
+
+  setTimeout(()=>{
+
+    success.classList.add("hidden");
+
+  },3000);
+
+});
+
+/* ================= CLOSE ================= */
+
+const closeBtn =
+document.getElementById("closeBtn");
+
+closeBtn.addEventListener("click",()=>{
+
+  window.history.back();
+
+});
+
+</script>
+
+</body>
+</html>

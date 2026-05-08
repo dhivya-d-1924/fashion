@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Fashion World</title>
+
+  <!-- ROBOTO FONT -->
+  <link rel="preconnect"
+  href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+  rel="stylesheet">
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <script>
+
+    tailwind.config = {
+
+      theme: {
+
+        extend: {
+
+          fontFamily: {
+
+            roboto:['Roboto','sans-serif']
+
+          },
+
+          colors: {
+
+            primary:'#FF6F61'
+
+          }
+
+        }
+
+      }
+
+    }
+
+  </script>
+
+</head>
+
+<body class="font-roboto bg-[#f5f5f5] text-[#222] overflow-x-hidden">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="bg-white">
+
+  <nav class="flex
+  justify-between
+  items-center
+  px-[7%]
+  py-5
+  relative">
+
+      <!-- LOGO IMAGE -->
+
+ <img src="images/Screenshot (938).png"
+alt="Fashion World Logo"
+class="w-34 h-34 object-contain">
+
+    <!-- NAV LINKS -->
+
+    <ul id="navLinks"
+    class="absolute md:static
+    top-[90px]
+    left-[-100%]
+    md:left-0
+    bg-white
+    w-full md:w-auto
+    flex flex-col md:flex-row
+    items-center
+    gap-8 md:gap-10
+    py-8 md:py-0
+    transition-all duration-300">
+
+      <li>
+        <a href="index.html"
+        class="text-lg hover:text-primary">
+
+          Home
+
+        </a>
+      </li>
+
+      <li>
+        <a href="catagories.html"
+        class="text-lg hover:text-primary">
+
+          Categories
+
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html"
+        class="text-lg hover:text-primary">
+
+          About Us
+
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html"
+        class="text-lg hover:text-primary">
+
+          Contact
+
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT -->
+
+<div class="hidden md:flex items-center gap-6">
+
+  <!-- CART -->
+
+  <a href="cart.html">
+
+    <i class="fa-solid fa-cart-shopping
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- OTP LOGIN -->
+
+  <a href="user.html">
+
+    <i class="fa-regular fa-user
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- LOGIN BUTTON -->
+
+  <a href="login.html">
+
+    <button class="bg-[#222]
+    text-white
+    px-8 py-3
+    rounded-xl
+    text-lg
+    hover:bg-primary
+    transition">
+
+      Login
+
+    </button>
+
+  </a>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<div id="menuBtn"
+class="md:hidden text-3xl cursor-pointer">
+
+  <i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="px-[7%]
+py-16
+flex flex-col xl:flex-row
+items-center
+justify-between
+gap-12">
+
+  <!-- LEFT -->
+
+  <div class="flex-1">
+
+    <h1 class="text-5xl md:text-7xl
+    font-bold
+    text-gray-500
+    leading-tight
+    mb-8">
+
+      Elevate Your Style This Season
+
+    </h1>
+
+    <p class="text-xl
+    text-gray-400
+    leading-relaxed
+    mb-8
+    max-w-[650px]">
+
+      Discover our new collection
+      of premium fashion pieces
+      designed for the modern
+      connoisseur.
+
+    </p>
+
+    <button class="bg-primary
+    text-white
+    px-10 py-4
+    rounded-xl
+    text-2xl
+    hover:scale-105
+    transition">
+
+      Go To Shop
+
+    </button>
+
+  </div>
+
+  <!-- RIGHT IMAGES -->
+
+  <div class="flex-1
+  grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4
+  gap-5">
+
+    <img src="images/Frame 2656.jpg"
+    class="w-full h-[550px] object-cover">
+
+    <img src="images/Frame 2657.jpg"
+    class="w-full h-[550px] object-cover">
+
+    <img src="images/Frame 2658.jpg"
+    class="w-full h-[550px] object-cover">
+
+    <img src="images/Frame 2659.jpg"
+    class="w-full h-[550px] object-cover">
+
+  </div>
+
+</section>
+
+<!-- ================= CATEGORY ================= -->
+<section class="px-[7%] py-20 text-center bg-white">
+
+  <!-- HEADING -->
+
+  <h2 class="text-4xl md:text-5xl font-bold">
+
+    Shop By Category
+
+  </h2>
+
+  <p class="text-gray-400
+  text-lg md:text-xl
+  mt-4 mb-14">
+
+    Curated collections
+    for every occasion
+
+  </p>
+
+  <!-- GRID -->
+
+  <div class="grid
+  grid-cols-1
+  sm:grid-cols-2
+  xl:grid-cols-4
+  gap-8">
+
+    <!-- CARD 1 -->
+
+    <a href="modern.html"
+    class="group
+    relative
+    overflow-hidden
+    rounded-3xl
+    shadow-lg
+    block">
+
+      <!-- IMAGE -->
+
+      <img src="images/Default.jpg"
+      class="w-full
+      h-[420px]
+      object-cover
+      transition-all
+      duration-500
+      group-hover:scale-110
+      group-hover:rotate-1">
+
+      <!-- DARK OVERLAY -->
+
+      <div class="absolute
+      inset-0
+      bg-black/20
+      opacity-0
+      group-hover:opacity-100
+      transition duration-500">
+
+      </div>
+
+      <!-- TEXT -->
+
+      <div class="absolute
+      top-1/2
+      left-1/2
+      -translate-x-1/2
+      -translate-y-1/2
+      w-[80%]
+      bg-white/70
+      backdrop-blur-md
+      py-5
+      rounded-2xl
+      text-3xl
+      font-bold
+      tracking-wide
+      shadow-xl
+      transition-all
+      duration-500
+      group-hover:bg-[#FF6F61]
+      group-hover:text-white
+      group-hover:scale-110">
+
+        Modern
+
+      </div>
+
+    </a>
+
+    <!-- CARD 2 -->
+
+    <a href="casual.html"
+    class="group
+    relative
+    overflow-hidden
+    rounded-3xl
+    shadow-lg
+    block">
+
+      <img src="images/Container+Shadow+BackgroundColor.jpg"
+      class="w-full
+      h-[420px]
+      object-cover
+      transition-all
+      duration-500
+      group-hover:scale-110
+      group-hover:rotate-1">
+
+      <div class="absolute
+      inset-0
+      bg-black/20
+      opacity-0
+      group-hover:opacity-100
+      transition duration-500">
+
+      </div>
+
+      <div class="absolute
+      top-1/2
+      left-1/2
+      -translate-x-1/2
+      -translate-y-1/2
+      w-[80%]
+      bg-white/70
+      backdrop-blur-md
+      py-5
+      rounded-2xl
+      text-3xl
+      font-bold
+      tracking-wide
+      shadow-xl
+      transition-all
+      duration-500
+      group-hover:bg-[#FF6F61]
+      group-hover:text-white
+      group-hover:scale-110">
+
+        Casual
+
+      </div>
+
+    </a>
+
+    <!-- CARD 3 -->
+
+    <a href="traditional.html"
+    class="group
+    relative
+    overflow-hidden
+    rounded-3xl
+    shadow-lg
+    block">
+
+      <img src="images/Container+Shadow+BackgroundColor (1).jpg"
+      class="w-full
+      h-[420px]
+      object-cover
+      transition-all
+      duration-500
+      group-hover:scale-110
+      group-hover:rotate-1">
+
+      <div class="absolute
+      inset-0
+      bg-black/20
+      opacity-0
+      group-hover:opacity-100
+      transition duration-500">
+
+      </div>
+
+      <div class="absolute
+      top-1/2
+      left-1/2
+      -translate-x-1/2
+      -translate-y-1/2
+      w-[80%]
+      bg-white/70
+      backdrop-blur-md
+      py-5
+      rounded-2xl
+      text-3xl
+      font-bold
+      tracking-wide
+      shadow-xl
+      transition-all
+      duration-500
+      group-hover:bg-[#FF6F61]
+      group-hover:text-white
+      group-hover:scale-110">
+
+        Traditional
+
+      </div>
+
+    </a>
+
+    <!-- CARD 4 -->
+
+    <a href="formal.html"
+    class="group
+    relative
+    overflow-hidden
+    rounded-3xl
+    shadow-lg
+    block">
+
+      <img src="images/Container+Shadow+BackgroundColor (2).jpg"
+      class="w-full
+      h-[420px]
+      object-cover
+      transition-all
+      duration-500
+      group-hover:scale-110
+      group-hover:rotate-1">
+
+      <div class="absolute
+      inset-0
+      bg-black/20
+      opacity-0
+      group-hover:opacity-100
+      transition duration-500">
+
+      </div>
+
+      <div class="absolute
+      top-1/2
+      left-1/2
+      -translate-x-1/2
+      -translate-y-1/2
+      w-[80%]
+      bg-white/70
+      backdrop-blur-md
+      py-5
+      rounded-2xl
+      text-3xl
+      font-bold
+      tracking-wide
+      shadow-xl
+      transition-all
+      duration-500
+      group-hover:bg-[#FF6F61]
+      group-hover:text-white
+      group-hover:scale-110">
+
+        Formal
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+<!-- ================= SALE BANNER ================= -->
+
+<section class="mx-[7%]
+h-[350px]
+bg-[url('images/Rectangle%20178.jpg')]
+bg-cover
+bg-center
+bg-no-repeat
+flex
+justify-center
+items-center">
+
+  <h2 class="text-6xl md:text-8xl
+  font-black
+  text-[#4b0000]">
+
+    50% OFF
+
+  </h2>
+
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="px-[7%]
+py-16
+grid grid-cols-1
+md:grid-cols-2
+xl:grid-cols-4
+gap-8">
+
+  <!-- PRODUCT -->
+
+  <div class="bg-white
+  rounded-2xl
+  overflow-hidden
+  shadow-lg">
+
+    <img src="images/Frame 2806.jpg"
+    class="w-full h-[350px] object-cover">
+
+    <div class="p-5">
+
+      <div class="flex justify-between mb-3">
+
+        <h3 class="text-3xl font-bold">
+
+          T-Shirt
+
+        </h3>
+
+        <span class="text-3xl font-bold">
+
+          $250
+
+        </span>
+
+      </div>
+
+      <p class="text-gray-500 mb-5">
+
+        Cotton Cloths for Summer
+
+      </p>
+
+      <div class="flex
+      justify-between
+      items-center">
+
+        <div class="text-xl">
+
+          4 ⭐
+
+        </div>
+
+        <button class="bg-primary
+        text-white
+        px-6 py-3
+        rounded-xl
+        text-xl">
+ <a href="buy.html">
+          Buy Now
+
+        </button>
+</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bg-white
+  rounded-2xl
+  overflow-hidden
+  shadow-lg">
+
+    <img src="images/Frame 2664.jpg"
+    class="w-full h-[350px] object-cover">
+
+    <div class="p-5">
+
+      <div class="flex justify-between mb-3">
+
+        <h3 class="text-3xl font-bold">
+
+          T-Shirt
+
+        </h3>
+
+        <span class="text-3xl font-bold">
+
+          $250
+
+        </span>
+
+      </div>
+
+      <p class="text-gray-500 mb-5">
+
+        Cotton Cloths for Summer
+
+      </p>
+
+      <div class="flex
+      justify-between
+      items-center">
+
+        <div class="text-xl">
+
+          4 ⭐
+
+        </div>
+
+        <button class="bg-primary
+        text-white
+        px-6 py-3
+        rounded-xl
+        text-xl">
+ <a href="buy.html">
+          Buy Now
+
+        </button>
+</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bg-white
+  rounded-2xl
+  overflow-hidden
+  shadow-lg">
+
+    <img src="images/Frame 2665.jpg"
+    class="w-full h-[350px] object-cover">
+
+    <div class="p-5">
+
+      <div class="flex justify-between mb-3">
+
+        <h3 class="text-3xl font-bold">
+
+          T-Shirt
+
+        </h3>
+
+        <span class="text-3xl font-bold">
+
+          $250
+
+        </span>
+
+      </div>
+
+      <p class="text-gray-500 mb-5">
+
+        Cotton Cloths for Summer
+
+      </p>
+
+      <div class="flex
+      justify-between
+      items-center">
+
+        <div class="text-xl">
+
+          4 ⭐
+
+        </div>
+
+        <button class="bg-primary
+        text-white
+        px-6 py-3
+        rounded-xl
+        text-xl">
+<a href="buy.html">
+          Buy Now
+
+        </button>
+</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bg-white
+  rounded-2xl
+  overflow-hidden
+  shadow-lg">
+
+    <img src="images/Frame 2807.jpg"
+    class="w-full h-[350px] object-cover">
+
+    <div class="p-5">
+
+      <div class="flex justify-between mb-3">
+
+        <h3 class="text-3xl font-bold">
+
+          T-Shirt
+
+        </h3>
+
+        <span class="text-3xl font-bold">
+
+          $250
+
+        </span>
+
+      </div>
+
+      <p class="text-gray-500 mb-5">
+
+        Cotton Cloths for Summer
+
+      </p>
+
+      <div class="flex
+      justify-between
+      items-center">
+
+        <div class="text-xl">
+
+          4 ⭐
+
+        </div>
+
+        <button class="bg-primary
+        text-white
+        px-6 py-3
+        rounded-xl
+        text-xl">
+<a href="buy.html">
+          Buy Now
+
+        </button>
+</a>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="text-center
+px-[7%]
+py-20">
+
+  <h2 class="text-4xl md:text-6xl font-bold">
+
+    Subscribe to Our Newsletter
+
+  </h2>
+
+  <p class="text-gray-400
+  text-xl
+  mt-5 mb-10">
+
+    Be the first to know about
+    new collections and
+    exclusive offers
+
+  </p>
+
+  <div class="max-w-[700px]
+  mx-auto
+  flex flex-col md:flex-row">
+
+    <input type="email"
+    placeholder="Enter your email"
+    class="flex-1
+    p-5
+    border
+    outline-none
+    text-lg">
+
+    <button class="bg-primary
+    text-white
+    px-10 py-5
+    text-xl">
+
+      Subscribe
+
+    </button>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#222]
+text-white
+px-[7%]
+py-20">
+
+  <div class="grid
+  grid-cols-1
+  md:grid-cols-2
+  xl:grid-cols-4
+  gap-12">
+
+    <!-- BOX -->
+
+    <div>
+
+      <h2 class="text-3xl font-bold">
+
+        LUXE.
+
+      </h2>
+
+      <p class="text-gray-300
+      leading-relaxed
+      mt-5">
+
+        Premium fashion for the
+        modern connoisseur.
+        Elevate your style
+        with our curated collections.
+
+      </p>
+
+      <div class="flex gap-4 mt-6">
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-twitter"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- LINKS -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Shop
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Accessories</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Sale</a>
+
+      </div>
+
+    </div>
+
+    <!-- HELP -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Help
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Customer Service</a>
+        <a href="#">My Account</a>
+        <a href="#">Find a Store</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">FAQ</a>
+
+      </div>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        About
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Our Story</a>
+        <a href="#">Careers</a>
+        <a href="#">Corporate Responsibility</a>
+        <a href="#">Press</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+  const menuBtn =
+  document.getElementById("menuBtn");
+
+  const navLinks =
+  document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click",()=>{
+
+    if(navLinks.classList.contains("left-[-100%]")){
+
+      navLinks.classList.remove("left-[-100%]");
+      navLinks.classList.add("left-0");
+
+    }
+
+    else{
+
+      navLinks.classList.remove("left-0");
+      navLinks.classList.add("left-[-100%]");
+
+    }
+
+  });
+
+</script>
+
+</body>
+</html

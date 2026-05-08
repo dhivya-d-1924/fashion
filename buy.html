@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fashion World - Checkout</title>
+
+  <!-- ROBOTO FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FF6F61",
+          },
+          fontFamily: {
+            roboto: ["Roboto", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+</head>
+
+<body class="bg-[#f5f5f5] font-roboto">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+<header class="bg-white">
+
+  <nav class="flex
+  justify-between
+  items-center
+  px-[7%]
+  py-5
+  relative">
+
+      <!-- LOGO IMAGE -->
+
+ <img src="images/Screenshot (938).png"
+alt="Fashion World Logo"
+class="w-34 h-34 object-contain">
+
+    <!-- NAV LINKS -->
+
+    <ul id="navLinks"
+    class="absolute md:static
+    top-[90px]
+    left-[-100%]
+    md:left-0
+    bg-white
+    w-full md:w-auto
+    flex flex-col md:flex-row
+    items-center
+    gap-8 md:gap-10
+    py-8 md:py-0
+    transition-all duration-300">
+
+      <li>
+        <a href="index.html"
+        class="text-lg hover:text-primary">
+
+          Home
+
+        </a>
+      </li>
+
+      <li>
+        <a href="catagories.html"
+        class="text-lg hover:text-primary">
+
+          Categories
+
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html"
+        class="text-lg hover:text-primary">
+
+          About Us
+
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html"
+        class="text-lg hover:text-primary">
+
+          Contact
+
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT -->
+
+<div class="hidden md:flex items-center gap-6">
+
+  <!-- CART -->
+
+  <a href="cart.html">
+
+    <i class="fa-solid fa-cart-shopping
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- OTP LOGIN -->
+
+  <a href="user.html">
+
+    <i class="fa-regular fa-user
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- LOGIN BUTTON -->
+
+  <a href="login.html">
+
+    <button class="bg-[#222]
+    text-white
+    px-8 py-3
+    rounded-xl
+    text-lg
+    hover:bg-primary
+    transition">
+
+      Login
+
+    </button>
+
+  </a>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<div id="menuBtn"
+class="md:hidden text-3xl cursor-pointer">
+
+  <i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+</header>
+
+<!-- ================= CHECKOUT SECTION ================= -->
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10">
+
+  <!-- TITLE -->
+
+  <h1 class="text-4xl md:text-6xl font-black text-center text-[#111827] mb-14">
+    Checkout
+  </h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12">
+
+    <!-- LEFT SIDE -->
+
+    <div>
+
+      <!-- STEPS -->
+
+      <div class="flex items-center flex-wrap gap-3 mb-14">
+
+        <!-- STEP 1 -->
+
+        <div class="flex items-center">
+
+          <div class="w-10 h-10 rounded-full
+          bg-primary
+          text-white
+          flex items-center justify-center
+          font-bold">
+
+            1
+
+          </div>
+
+          <span class="ml-3 text-2xl font-bold text-[#111827]">
+            Shipping
+          </span>
+
+        </div>
+
+        <div class="w-20 md:w-40 h-[2px] bg-primary"></div>
+
+        <!-- STEP 2 -->
+
+        <div class="flex items-center">
+
+          <div class="w-10 h-10 rounded-full
+          border-2 border-gray-300
+          text-gray-400
+          flex items-center justify-center
+          font-bold">
+
+            2
+
+          </div>
+
+          <span class="ml-3 text-2xl font-medium text-gray-500">
+            Payment
+          </span>
+
+        </div>
+
+        <div class="w-20 md:w-40 h-[2px] bg-gray-300"></div>
+
+        <!-- STEP 3 -->
+
+        <div class="flex items-center">
+
+          <div class="w-10 h-10 rounded-full
+          border-2 border-gray-300
+          text-gray-400
+          flex items-center justify-center
+          font-bold">
+
+            3
+
+          </div>
+
+          <span class="ml-3 text-2xl font-medium text-gray-500">
+            Confirm
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- DELIVERY INFORMATION -->
+
+      <h2 class="text-3xl font-bold text-[#111827] mb-8">
+        Delivery Information
+      </h2>
+
+      <!-- FORM -->
+
+      <form id="checkoutForm"
+      class="space-y-8">
+
+        <!-- NAME -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <div>
+
+            <label class="block text-xl font-medium mb-3">
+              First Name
+            </label>
+
+            <input type="text"
+            required
+            class="w-full h-14 border
+            border-gray-300
+            rounded-lg
+            px-4
+            bg-white
+            outline-none
+            focus:border-primary">
+
+          </div>
+
+          <div>
+
+            <label class="block text-xl font-medium mb-3">
+              Last Name
+            </label>
+
+            <input type="text"
+            required
+            class="w-full h-14 border
+            border-gray-300
+            rounded-lg
+            px-4
+            bg-white
+            outline-none
+            focus:border-primary">
+
+          </div>
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div>
+
+          <label class="block text-xl font-medium mb-3">
+            Email Address
+          </label>
+
+          <input type="email"
+          required
+          class="w-full h-14 border
+          border-gray-300
+          rounded-lg
+          px-4
+          bg-white
+          outline-none
+          focus:border-primary">
+
+        </div>
+
+        <!-- PHONE -->
+
+        <div>
+
+          <label class="block text-xl font-medium mb-3">
+            Phone Number
+          </label>
+
+          <input type="tel"
+          required
+          class="w-full h-14 border
+          border-gray-300
+          rounded-lg
+          px-4
+          bg-white
+          outline-none
+          focus:border-primary">
+
+        </div>
+
+        <!-- ADDRESS -->
+
+        <div>
+
+          <label class="block text-xl font-medium mb-3">
+            Street Address
+          </label>
+
+          <input type="text"
+          required
+          class="w-full h-14 border
+          border-gray-300
+          rounded-lg
+          px-4
+          bg-white
+          outline-none
+          focus:border-primary">
+
+        </div>
+
+        <!-- CITY -->
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div>
+
+            <label class="block text-xl font-medium mb-3">
+              City
+            </label>
+
+            <input type="text"
+            required
+            class="w-full h-14 border
+            border-gray-300
+            rounded-lg
+            px-4
+            bg-white
+            outline-none
+            focus:border-primary">
+
+          </div>
+
+          <div>
+
+            <label class="block text-xl font-medium mb-3">
+              State / Province
+            </label>
+
+            <input type="text"
+            required
+            class="w-full h-14 border
+            border-gray-300
+            rounded-lg
+            px-4
+            bg-white
+            outline-none
+            focus:border-primary">
+
+          </div>
+
+          <div>
+
+            <label class="block text-xl font-medium mb-3">
+              ZIP / Postal Code
+            </label>
+
+            <input type="text"
+            required
+            class="w-full h-14 border
+            border-gray-300
+            rounded-lg
+            px-4
+            bg-white
+            outline-none
+            focus:border-primary">
+
+          </div>
+
+        </div>
+
+        <!-- COUNTRY -->
+
+        <div>
+
+          <label class="block text-xl font-medium mb-3">
+            Country
+          </label>
+
+          <input type="text"
+          required
+          class="w-full h-14 border
+          border-gray-300
+          rounded-lg
+          px-4
+          bg-white
+          outline-none
+          focus:border-primary">
+
+        </div>
+
+        <!-- PAYMENT OPTIONS -->
+
+        <div>
+
+          <h2 class="text-3xl font-bold text-[#111827] mb-8">
+            Payment Options
+          </h2>
+
+          <div class="space-y-5">
+
+            <!-- CARD -->
+
+            <label class="flex items-center gap-4 cursor-pointer">
+
+              <input type="radio"
+              name="payment"
+              checked>
+
+              <div class="flex items-center gap-3 text-2xl font-medium">
+
+                <i class="fa-regular fa-credit-card text-primary"></i>
+
+                Card
+
+              </div>
+
+            </label>
+
+            <!-- UPI -->
+
+            <label class="flex items-center gap-4 cursor-pointer">
+
+              <input type="radio"
+              name="payment">
+
+              <div class="flex items-center gap-3 text-2xl font-medium">
+
+                <i class="fa-solid fa-mobile-screen text-primary"></i>
+
+                UPI
+
+              </div>
+
+            </label>
+
+            <!-- NETBANKING -->
+
+            <label class="flex items-center gap-4 cursor-pointer">
+
+              <input type="radio"
+              name="payment">
+
+              <div class="flex items-center gap-3 text-2xl font-medium">
+
+                <i class="fa-solid fa-building-columns text-primary"></i>
+
+                Netbanking
+
+              </div>
+
+            </label>
+
+          </div>
+
+        </div>
+
+        <!-- PROMO CODE -->
+
+        <div>
+
+          <h2 class="text-2xl font-bold mb-5">
+            Promo Code
+          </h2>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+
+            <input type="text"
+            id="promoInput"
+            placeholder="Enter promo code"
+            class="flex-1 h-14 border
+            border-gray-300
+            rounded-lg
+            px-4
+            outline-none
+            focus:border-primary">
+
+            <button type="button"
+            id="applyPromo"
+            class="bg-primary
+            text-white
+            px-8
+            rounded-lg
+            text-xl
+            font-medium
+            hover:opacity-90
+            transition">
+
+              Apply
+
+            </button>
+
+          </div>
+
+          <p id="promoMessage"
+          class="mt-4 text-lg"></p>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <div class="pt-6">
+
+          <button type="submit"
+          class="bg-blue-600
+          hover:bg-blue-700
+          transition
+          text-white
+          text-2xl
+          font-semibold
+          px-10
+          py-4
+          rounded-xl
+          w-full md:w-auto">
+
+            Continue to Payment
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div>
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm sticky top-10">
+
+        <h2 class="text-4xl font-bold text-[#111827] mb-10">
+          Order Summary
+        </h2>
+
+        <!-- PRODUCT 1 -->
+
+        <div class="flex gap-4 pb-6 border-b">
+
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=400&auto=format&fit=crop"
+          class="w-24 h-24 object-cover rounded-lg">
+
+          <div class="flex-1">
+
+            <div class="flex justify-between gap-4">
+
+              <div>
+
+                <h3 class="text-2xl font-bold">
+                  Product Name 1
+                </h3>
+
+                <p class="text-gray-500 text-xl mt-1">
+                  Quantity: 1
+                </p>
+
+              </div>
+
+              <h4 class="text-2xl font-bold">
+                $29.99
+              </h4>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- PRODUCT 2 -->
+
+        <div class="flex gap-4 py-6 border-b">
+
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=400&auto=format&fit=crop"
+          class="w-24 h-24 object-cover rounded-lg">
+
+          <div class="flex-1">
+
+            <div class="flex justify-between gap-4">
+
+              <div>
+
+                <h3 class="text-2xl font-bold">
+                  Product Name 2
+                </h3>
+
+                <p class="text-gray-500 text-xl mt-1">
+                  Quantity: 2
+                </p>
+
+              </div>
+
+              <h4 class="text-2xl font-bold">
+                $49.98
+              </h4>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- PRICE DETAILS -->
+
+        <div class="space-y-5 pt-8">
+
+          <div class="flex justify-between text-2xl">
+
+            <span class="text-gray-600">
+              Subtotal
+            </span>
+
+            <span id="subtotal">
+              $79.97
+            </span>
+
+          </div>
+
+          <div class="flex justify-between text-2xl">
+
+            <span class="text-gray-600">
+              Shipping
+            </span>
+
+            <span>
+              $5.00
+            </span>
+
+          </div>
+
+          <div class="flex justify-between text-3xl font-bold pt-4">
+
+            <span>
+              Total
+            </span>
+
+            <span id="total">
+              $84.97
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#222]
+text-white
+px-[7%]
+py-20">
+
+  <div class="grid
+  grid-cols-1
+  md:grid-cols-2
+  xl:grid-cols-4
+  gap-12">
+
+    <!-- BOX -->
+
+    <div>
+
+      <h2 class="text-3xl font-bold">
+
+        LUXE.
+
+      </h2>
+
+      <p class="text-gray-300
+      leading-relaxed
+      mt-5">
+
+        Premium fashion for the
+        modern connoisseur.
+        Elevate your style
+        with our curated collections.
+
+      </p>
+
+      <div class="flex gap-4 mt-6">
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-twitter"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- LINKS -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Shop
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Accessories</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Sale</a>
+
+      </div>
+
+    </div>
+
+    <!-- HELP -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Help
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Customer Service</a>
+        <a href="#">My Account</a>
+        <a href="#">Find a Store</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">FAQ</a>
+
+      </div>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        About
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Our Story</a>
+        <a href="#">Careers</a>
+        <a href="#">Corporate Responsibility</a>
+        <a href="#">Press</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const promoBtn = document.getElementById("applyPromo");
+const promoInput = document.getElementById("promoInput");
+const promoMessage = document.getElementById("promoMessage");
+const total = document.getElementById("total");
+
+promoBtn.addEventListener("click", () => {
+
+  const code = promoInput.value.trim();
+
+  if(code === "SAVE10") {
+
+    total.innerText = "$74.97";
+
+    promoMessage.innerText = "Promo code applied successfully!";
+
+    promoMessage.classList.add("text-green-600");
+
+  }
+
+  else {
+
+    promoMessage.innerText = "Invalid promo code";
+
+    promoMessage.classList.add("text-red-500");
+
+  }
+
+});
+
+document.getElementById("checkoutForm")
+.addEventListener("submit", (e) => {
+
+  e.preventDefault();
+
+  alert("Proceeding to Payment!");
+
+});
+
+</script>
+
+</body>
+</html>

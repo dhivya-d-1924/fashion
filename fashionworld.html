@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Fashion World - Categories</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+  rel="stylesheet">
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FF6F61",
+          },
+
+          fontFamily: {
+            roboto: ["Roboto", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+</head>
+
+<body class="bg-[#f5f5f5] font-roboto overflow-x-hidden">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="bg-[#ececec]">
+
+  <nav class="max-w-7xl mx-auto
+  px-6 lg:px-10
+  h-[100px]
+  flex items-center justify-between">
+
+    <!-- LOGO -->
+
+    <h1 class="text-3xl font-light tracking-wide">
+      Fashion World
+    </h1>
+
+    <!-- MENU -->
+
+    <ul class="hidden lg:flex items-center gap-14 text-2xl">
+
+      <li>
+        <a href="index.html"
+        class="hover:text-primary transition">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="categories.html"
+        class="bg-primary text-black px-8 py-5">
+          Categories
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html"
+        class="hover:text-primary transition">
+          About Us
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html"
+        class="hover:text-primary transition">
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT -->
+
+    <div class="hidden md:flex items-center gap-8">
+
+      <a href="cart.html">
+        <i class="fa-solid fa-cart-shopping
+        text-3xl
+        hover:text-primary
+        transition"></i>
+      </a>
+
+      <a href="login.html">
+        <i class="fa-regular fa-user
+        text-3xl
+        hover:text-primary
+        transition"></i>
+      </a>
+
+      <a href="login.html">
+
+        <button class="bg-[#222]
+        text-white
+        px-10 py-4
+        rounded-2xl
+        text-2xl
+        hover:bg-primary
+        transition">
+
+          Login
+
+        </button>
+
+      </a>
+
+    </div>
+
+    <!-- MOBILE -->
+
+    <button id="menuBtn"
+    class="lg:hidden text-4xl">
+
+      <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+  </nav>
+
+  <!-- MOBILE MENU -->
+
+  <div id="mobileMenu"
+  class="hidden lg:hidden bg-white px-6 py-6">
+
+    <ul class="space-y-6 text-xl">
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="categories.html"
+        class="text-primary font-bold">
+          Categories
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html">About Us</a>
+      </li>
+
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+
+      <li>
+        <a href="cart.html">Cart</a>
+      </li>
+
+      <li>
+        <a href="login.html">Login</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</header>
+
+<!-- ================= CATEGORY MENU ================= -->
+
+<section class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+
+  <div class="flex flex-wrap gap-6 text-3xl mb-14">
+
+    <button class="filter-btn active text-black"
+    data-filter="all">
+
+      All/
+
+    </button>
+
+    <button class="filter-btn text-primary"
+    data-filter="modern">
+
+      Modern/
+
+    </button>
+
+    <button class="filter-btn"
+    data-filter="traditional">
+
+      Traditional/
+
+    </button>
+
+    <button class="filter-btn"
+    data-filter="casual">
+
+      Casual/
+
+    </button>
+
+    <button class="filter-btn"
+    data-filter="formal">
+
+      Formals
+
+    </button>
+
+  </div>
+
+  <!-- CONTENT -->
+
+  <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12">
+
+    <!-- SIDEBAR -->
+
+    <aside class="bg-white border rounded-2xl h-fit overflow-hidden">
+
+      <div class="py-10 text-center text-4xl font-bold border-b">
+
+        categories
+
+      </div>
+
+      <div class="flex flex-col text-center text-3xl font-medium">
+
+        <button class="py-5 bg-gray-300">
+          All
+        </button>
+
+        <button class="py-5 hover:bg-gray-100 transition">
+          Men
+        </button>
+
+        <button class="py-5 hover:bg-gray-100 transition">
+          Women
+        </button>
+
+        <button class="py-5 hover:bg-gray-100 transition">
+          Kids
+        </button>
+
+      </div>
+
+    </aside>
+
+    <!-- PRODUCTS -->
+
+    <div id="productContainer"
+    class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
+
+      <!-- CARD -->
+
+      <div class="product-card"
+      data-category="casual">
+
+        <div class="overflow-hidden rounded-xl">
+
+          <img src="images/Frame 2664.jpg"
+          class="w-full h-[420px]
+          object-cover
+          hover:scale-110
+          transition duration-500">
+
+        </div>
+
+        <div class="flex justify-between items-center mt-5">
+
+          <h2 class="text-3xl font-bold">
+            T-Shirt & Jean
+          </h2>
+
+          <span class="text-3xl font-bold">
+            $800
+          </span>
+
+        </div>
+
+        <p class="text-gray-500 text-2xl mt-3">
+          Casual wear
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="product-card"
+      data-category="traditional">
+
+        <div class="overflow-hidden rounded-xl">
+
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=600"
+          class="w-full h-[420px]
+          object-cover
+          hover:scale-110
+          transition duration-500">
+
+        </div>
+
+        <div class="flex justify-between items-center mt-5">
+
+          <h2 class="text-3xl font-bold">
+            Saree
+          </h2>
+
+          <span class="text-3xl font-bold">
+            $2000
+          </span>
+
+        </div>
+
+        <p class="text-gray-500 text-2xl mt-3">
+          Traditional wear
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="product-card"
+      data-category="modern">
+
+        <div class="overflow-hidden rounded-xl">
+
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600"
+          class="w-full h-[420px]
+          object-cover
+          hover:scale-110
+          transition duration-500">
+
+        </div>
+
+        <div class="flex justify-between items-center mt-5">
+
+          <h2 class="text-3xl font-bold">
+            Modern Outfit
+          </h2>
+
+          <span class="text-3xl font-bold">
+            $1200
+          </span>
+
+        </div>
+
+        <p class="text-gray-500 text-2xl mt-3">
+          Modern wear
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="product-card"
+      data-category="formal">
+
+        <div class="overflow-hidden rounded-xl">
+
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600"
+          class="w-full h-[420px]
+          object-cover
+          hover:scale-110
+          transition duration-500">
+
+        </div>
+
+        <div class="flex justify-between items-center mt-5">
+
+          <h2 class="text-3xl font-bold">
+            Suit
+          </h2>
+
+          <span class="text-3xl font-bold">
+            $1000
+          </span>
+
+        </div>
+
+        <p class="text-gray-500 text-2xl mt-3">
+          Formal wear
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="product-card"
+      data-category="modern">
+
+        <div class="overflow-hidden rounded-xl">
+
+          <img src="images/Frame 2665.jpg"
+          class="w-full h-[420px]
+          object-cover
+          hover:scale-110
+          transition duration-500">
+
+        </div>
+
+        <div class="flex justify-between items-center mt-5">
+
+          <h2 class="text-3xl font-bold">
+            Kurti
+          </h2>
+
+          <span class="text-3xl font-bold">
+            $500
+          </span>
+
+        </div>
+
+        <p class="text-gray-500 text-2xl mt-3">
+          Festival Wear
+        </p>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="product-card"
+      data-category="casual">
+
+        <div class="overflow-hidden rounded-xl">
+
+          <img src="images/Frame 2665.jpg"
+          class="w-full h-[420px]
+          object-cover
+          hover:scale-110
+          transition duration-500">
+
+        </div>
+
+        <div class="flex justify-between items-center mt-5">
+
+          <h2 class="text-3xl font-bold">
+            Casual Shirt
+          </h2>
+
+          <span class="text-3xl font-bold">
+            $600
+          </span>
+
+        </div>
+
+        <p class="text-gray-500 text-2xl mt-3">
+          Casual wear
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#222] text-white mt-20">
+
+  <div class="max-w-7xl mx-auto
+  px-6 lg:px-10
+  py-16
+  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+    <!-- BRAND -->
+
+    <div>
+
+      <h2 class="text-4xl font-bold mb-6">
+        LUXE.
+      </h2>
+
+      <p class="text-gray-300 text-xl leading-relaxed">
+
+        Premium fashion for the modern
+        connoisseur. Elevate your style
+        with our curated collections.
+
+      </p>
+
+      <div class="flex gap-4 mt-8">
+
+        <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center">
+          <i class="fa-brands fa-facebook-f"></i>
+        </div>
+
+        <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center">
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SHOP -->
+
+    <div>
+
+      <h3 class="text-3xl font-bold mb-6">
+        Shop
+      </h3>
+
+      <ul class="space-y-4 text-gray-300 text-xl">
+
+        <li>Women</li>
+        <li>Men</li>
+        <li>Accessories</li>
+        <li>Sale</li>
+
+      </ul>
+
+    </div>
+
+    <!-- HELP -->
+
+    <div>
+
+      <h3 class="text-3xl font-bold mb-6">
+        Help
+      </h3>
+
+      <ul class="space-y-4 text-gray-300 text-xl">
+
+        <li>Customer Service</li>
+        <li>Shipping & Returns</li>
+        <li>FAQ</li>
+
+      </ul>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div>
+
+      <h3 class="text-3xl font-bold mb-6">
+        About
+      </h3>
+
+      <ul class="space-y-4 text-gray-300 text-xl">
+
+        <li>Our Story</li>
+        <li>Careers</li>
+        <li>Press</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+  // MOBILE MENU
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("hidden");
+
+  });
+
+
+  // FILTER PRODUCTS
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const products = document.querySelectorAll(".product-card");
+
+  filterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+      const filter = button.dataset.filter;
+
+      filterButtons.forEach((btn) => {
+
+        btn.classList.remove("text-primary");
+
+        btn.classList.add("text-black");
+
+      });
+
+      button.classList.add("text-primary");
+
+      products.forEach((card) => {
+
+        if(filter === "all") {
+
+          card.style.display = "block";
+
+        }
+
+        else if(card.dataset.category === filter) {
+
+          card.style.display = "block";
+
+        }
+
+        else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>

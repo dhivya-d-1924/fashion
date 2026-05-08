@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Shopping Cart</title>
+
+  <!-- ROBOTO -->
+
+  <link rel="preconnect"
+  href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+  rel="stylesheet">
+
+  <!-- TAILWIND -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <script>
+
+    tailwind.config = {
+
+      theme: {
+
+        extend: {
+
+          fontFamily: {
+
+            roboto:['Roboto','sans-serif']
+
+          },
+
+          colors: {
+
+            primary:'#FF6F61'
+
+          }
+
+        }
+
+      }
+
+    }
+
+  </script>
+
+</head>
+
+<body class="font-roboto bg-[#f5f5f5] text-[#111827] overflow-x-hidden">
+
+    <!-- ================= NAVBAR ================= -->
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="bg-white">
+
+  <nav class="flex
+  justify-between
+  items-center
+  px-[7%]
+  py-5
+  relative">
+
+      <!-- LOGO IMAGE -->
+
+ <img src="images/Screenshot (938).png"
+alt="Fashion World Logo"
+class="w-34 h-34 object-contain">
+
+    <!-- NAV LINKS -->
+
+    <ul id="navLinks"
+    class="absolute md:static
+    top-[90px]
+    left-[-100%]
+    md:left-0
+    bg-white
+    w-full md:w-auto
+    flex flex-col md:flex-row
+    items-center
+    gap-8 md:gap-10
+    py-8 md:py-0
+    transition-all duration-300">
+
+      <li>
+        <a href="index.html"
+        class="text-lg hover:text-primary">
+
+          Home
+
+        </a>
+      </li>
+
+      <li>
+        <a href="catagories.html"
+        class="text-lg hover:text-primary">
+
+          Categories
+
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html"
+        class="text-lg hover:text-primary">
+
+          About Us
+
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html"
+        class="text-lg hover:text-primary">
+
+          Contact
+
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT -->
+
+<div class="hidden md:flex items-center gap-6">
+
+  <!-- CART -->
+
+  <a href="cart.html">
+
+    <i class="fa-solid fa-cart-shopping
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- OTP LOGIN -->
+
+  <a href="user.html">
+
+    <i class="fa-regular fa-user
+    text-xl
+    cursor-pointer
+    hover:text-primary
+    transition"></i>
+
+  </a>
+
+  <!-- LOGIN BUTTON -->
+
+  <a href="login.html">
+
+    <button class="bg-[#222]
+    text-white
+    px-8 py-3
+    rounded-xl
+    text-lg
+    hover:bg-primary
+    transition">
+
+      Login
+
+    </button>
+
+  </a>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<div id="menuBtn"
+class="md:hidden text-3xl cursor-pointer">
+
+  <i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+</header>
+<!-- ================= SECTION ================= -->
+
+<section class="px-[7%] py-16">
+
+  <!-- TITLE -->
+
+  <h1 class="text-center
+  text-4xl md:text-6xl xl:text-7xl
+  font-bold
+  mb-20">
+
+    Shopping Cart
+
+  </h1>
+
+  <!-- WRAPPER -->
+
+  <div class="grid
+  grid-cols-1 xl:grid-cols-[2fr_1fr]
+  gap-14 xl:gap-20
+  items-start">
+
+    <!-- ================= LEFT ================= -->
+
+    <div>
+
+      <h2 class="text-3xl md:text-5xl xl:text-6xl
+      font-bold
+      mb-14">
+
+        Your Cart
+
+      </h2>
+
+      <!-- ITEM -->
+
+      <div class="cart-item
+      flex flex-col md:flex-row
+      gap-10
+      mb-20
+      items-start md:items-center">
+
+        <!-- IMAGE -->
+
+        <img
+        src="images/Frame 2658.jpg"
+
+        class="w-full md:w-[320px]
+        h-[300px] md:h-[320px]
+        object-cover
+        rounded-lg">
+
+        <!-- DETAILS -->
+
+        <div class="flex-1 w-full">
+
+          <!-- TOP -->
+
+          <div class="flex
+          flex-col lg:flex-row
+          justify-between
+          gap-5
+          mb-8">
+
+            <div>
+
+              <h3 class="text-3xl md:text-4xl font-bold mb-3">
+
+                Wireless Headphones
+
+              </h3>
+
+              <p class="text-gray-600
+              text-xl md:text-2xl">
+
+                Black, Noise Cancelling
+
+              </p>
+
+            </div>
+
+            <span class="price
+            text-3xl md:text-4xl
+            font-bold">
+
+              $199.98
+
+            </span>
+
+          </div>
+
+          <!-- QUANTITY -->
+
+          <div class="flex items-center">
+
+            <button
+            class="minus
+            w-14 h-14
+            border border-gray-300
+            bg-white
+            text-3xl">
+
+              −
+
+            </button>
+
+            <span
+            class="count
+            w-16 h-14
+            border-y border-gray-300
+            bg-white
+            flex items-center justify-center
+            text-2xl">
+
+              1
+
+            </span>
+
+            <button
+            class="plus
+            w-14 h-14
+            border border-gray-300
+            bg-white
+            text-3xl">
+
+              +
+
+            </button>
+
+            <!-- DELETE -->
+
+            <i class="fa-regular fa-trash-can
+            delete
+            text-red-500
+            text-3xl
+            ml-6
+            cursor-pointer"></i>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+
+      <div class="cart-item
+      flex flex-col md:flex-row
+      gap-10
+      mb-20
+      items-start md:items-center">
+
+        <!-- IMAGE -->
+
+        <img
+        src="images/Frame 2663.jpg"
+
+        class="w-full md:w-[320px]
+        h-[300px] md:h-[320px]
+        object-cover
+        rounded-lg">
+
+        <!-- DETAILS -->
+
+        <div class="flex-1 w-full">
+
+          <!-- TOP -->
+
+          <div class="flex
+          flex-col lg:flex-row
+          justify-between
+          gap-5
+          mb-8">
+
+            <div>
+
+              <h3 class="text-3xl md:text-4xl font-bold mb-3">
+
+                Smartwatch
+
+              </h3>
+
+              <p class="text-gray-600
+              text-xl md:text-2xl">
+
+                Silver, 42mm
+
+              </p>
+
+            </div>
+
+            <span class="price
+            text-3xl md:text-4xl
+            font-bold">
+
+              $249.00
+
+            </span>
+
+          </div>
+
+          <!-- QUANTITY -->
+
+          <div class="flex items-center">
+
+            <button
+            class="minus
+            w-14 h-14
+            border border-gray-300
+            bg-white
+            text-3xl">
+
+              −
+
+            </button>
+
+            <span
+            class="count
+            w-16 h-14
+            border-y border-gray-300
+            bg-white
+            flex items-center justify-center
+            text-2xl">
+
+              1
+
+            </span>
+
+            <button
+            class="plus
+            w-14 h-14
+            border border-gray-300
+            bg-white
+            text-3xl">
+
+              +
+
+            </button>
+
+            <!-- DELETE -->
+
+            <i class="fa-regular fa-trash-can
+            delete
+            text-red-500
+            text-3xl
+            ml-6
+            cursor-pointer"></i>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= RIGHT ================= -->
+
+    <div class="bg-white
+    p-8 md:p-12
+    rounded-3xl
+    shadow-lg
+    sticky top-10">
+
+      <h3 class="text-3xl md:text-4xl
+      font-bold
+      mb-10">
+
+        Price Breakdown
+
+      </h3>
+
+      <!-- ROW -->
+
+      <div class="flex
+      justify-between
+      text-xl md:text-3xl
+      text-gray-700
+      mb-6">
+
+        <span>Subtotal</span>
+
+        <span id="subtotal">
+
+          $628.95
+
+        </span>
+
+      </div>
+
+      <!-- ROW -->
+
+      <div class="flex
+      justify-between
+      text-xl md:text-3xl
+      text-gray-700
+      mb-6">
+
+        <span>Tax (8%)</span>
+
+        <span id="tax">
+
+          $50.32
+
+        </span>
+
+      </div>
+
+      <!-- ROW -->
+
+      <div class="flex
+      justify-between
+      text-xl md:text-3xl
+      text-gray-700
+      mb-6">
+
+        <span>Shipping</span>
+
+        <span>
+
+          $15.00
+
+        </span>
+
+      </div>
+
+      <!-- LINE -->
+
+      <div class="border-t-2
+      border-gray-200
+      my-10"></div>
+
+      <!-- TOTAL -->
+
+      <div class="flex
+      justify-between
+      text-2xl md:text-4xl
+      font-bold">
+
+        <span>Total</span>
+
+        <span id="total">
+
+          $694.27
+
+        </span>
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <button
+      class="w-full
+      mt-10
+      bg-primary
+      hover:-translate-y-1
+      transition
+      text-white
+      py-5
+      rounded-2xl
+      text-2xl md:text-3xl">
+<a href="checkout.html">
+        Checkout
+
+      </button>
+</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#222]
+text-white
+px-[7%]
+py-20">
+
+  <div class="grid
+  grid-cols-1
+  md:grid-cols-2
+  xl:grid-cols-4
+  gap-12">
+
+    <!-- BOX -->
+
+    <div>
+
+      <h2 class="text-3xl font-bold">
+
+        LUXE.
+
+      </h2>
+
+      <p class="text-gray-300
+      leading-relaxed
+      mt-5">
+
+        Premium fashion for the
+        modern connoisseur.
+        Elevate your style
+        with our curated collections.
+
+      </p>
+
+      <div class="flex gap-4 mt-6">
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-facebook-f"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-instagram"></i>
+
+        </div>
+
+        <div class="w-10 h-10
+        rounded-full
+        bg-[#444]
+        flex items-center justify-center">
+
+          <i class="fa-brands fa-twitter"></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- LINKS -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Shop
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Women</a>
+        <a href="#">Men</a>
+        <a href="#">Accessories</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Sale</a>
+
+      </div>
+
+    </div>
+
+    <!-- HELP -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        Help
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Customer Service</a>
+        <a href="#">My Account</a>
+        <a href="#">Find a Store</a>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">FAQ</a>
+
+      </div>
+
+    </div>
+
+    <!-- ABOUT -->
+
+    <div>
+
+      <h3 class="text-2xl font-bold mb-5">
+
+        About
+
+      </h3>
+
+      <div class="flex flex-col gap-4 text-gray-300">
+
+        <a href="#">Our Story</a>
+        <a href="#">Careers</a>
+        <a href="#">Corporate Responsibility</a>
+        <a href="#">Press</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* ================= BUTTONS ================= */
+
+const plusBtns =
+document.querySelectorAll(".plus");
+
+const minusBtns =
+document.querySelectorAll(".minus");
+
+const deleteBtns =
+document.querySelectorAll(".delete");
+
+/* ================= PLUS ================= */
+
+plusBtns.forEach((btn)=>{
+
+  btn.addEventListener("click",()=>{
+
+    const count =
+    btn.parentElement.querySelector(".count");
+
+    let value =
+    parseInt(count.innerText);
+
+    value++;
+
+    count.innerText = value;
+
+    updateTotal();
+
+  });
+
+});
+
+/* ================= MINUS ================= */
+
+minusBtns.forEach((btn)=>{
+
+  btn.addEventListener("click",()=>{
+
+    const count =
+    btn.parentElement.querySelector(".count");
+
+    let value =
+    parseInt(count.innerText);
+
+    if(value > 1){
+
+      value--;
+
+      count.innerText = value;
+
+      updateTotal();
+
+    }
+
+  });
+
+});
+
+/* ================= DELETE ================= */
+
+deleteBtns.forEach((btn)=>{
+
+  btn.addEventListener("click",()=>{
+
+    btn.closest(".cart-item").remove();
+
+    updateTotal();
+
+  });
+
+});
+
+/* ================= TOTAL ================= */
+
+function updateTotal(){
+
+  const items =
+  document.querySelectorAll(".cart-item");
+
+  let subtotal = 0;
+
+  items.forEach((item)=>{
+
+    const priceText =
+    item.querySelector(".price")
+    .innerText.replace("$","");
+
+    const quantity =
+    parseInt(
+      item.querySelector(".count")
+      .innerText
+    );
+
+    subtotal +=
+    parseFloat(priceText) * quantity;
+
+  });
+
+  const tax =
+  subtotal * 0.08;
+
+  const shipping =
+  subtotal > 0 ? 15 : 0;
+
+  const total =
+  subtotal + tax + shipping;
+
+  document.getElementById("subtotal")
+  .innerText =
+  `$${subtotal.toFixed(2)}`;
+
+  document.getElementById("tax")
+  .innerText =
+  `$${tax.toFixed(2)}`;
+
+  document.getElementById("total")
+  .innerText =
+  `$${total.toFixed(2)}`;
+
+}
+
+</script>
+
+</body>
+</html>
