@@ -517,22 +517,40 @@ gap-12">
 <!-- ================= SALE BANNER ================= -->
 
 <section class="mx-[7%]
+relative
 h-[350px]
-bg-[url('images/Rectangle%20178.jpg')]
-bg-cover
-bg-center
-bg-no-repeat
-flex
-justify-center
-items-center">
+rounded-3xl
+overflow-hidden
+group">
 
-  <h2 class="text-6xl md:text-8xl
-  font-black
-  text-[#4b0000]">
+  <!-- IMAGE -->
 
-    50% OFF
+  <img src="images/Rectangle 178.jpg"
+  alt="Sale Banner"
+  class="w-full
+  h-full
+  object-cover
+  transition duration-700
+  group-hover:scale-110">
 
-  </h2>
+  <!-- OVERLAY -->
+
+  <div class="absolute inset-0
+  bg-black/20
+  flex justify-center items-center">
+
+    <h2 class="text-6xl md:text-8xl
+    font-black
+    text-white
+    drop-shadow-2xl
+    transition duration-500
+    group-hover:scale-110">
+
+      50% OFF
+
+    </h2>
+
+  </div>
 
 </section>
 
